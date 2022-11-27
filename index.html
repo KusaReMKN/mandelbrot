@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="KusaReMKN">
+<meta name="description" content="マンデルブロ集合の世界を自由に観察できます">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@KusaReMKN">
+<meta name="twitter:creator" content="@KusaReMKN">
+<meta property="og:url" content="https://kusaremkn.github.io/mandelbrot/">
+<meta property="og:title" content="マンデルブロ集合探検">
+<meta property="og:description" content="マンデルブロ集合の世界を自由に観察できます">
+<meta property="og:image" content="https://kusaremkn.github.io/mandelbrot/img/mandelbrot_twitter.jpg">
+<title>マンデルブロ集合探検</title>
+<link rel="stylesheet" href="./css/mandelbrot.css">
+<script src="./js/mandelbrot.js" defer></script>
+</head>
+<body>
+<header>
+<h1>マンデルブロ集合探検</h1>
+</header>
+<p>
+画像をクリックすると、その地点を中心として 2 倍拡大します。
+右クリックすると中心を変更せずに 2 倍縮小します。
+<var>r</var> の値が e-14 くらいになると計算精度の限界がやってきます。
+いい方法を考えているところです。
+</p>
+<div id="canvas"></div>
+<div>
+<progress id="prog" style="width: 100%;"></progress><br>
+<label>Iteration: <input type="number" value="100" min="0" max="1e5" step="1" id="iter"></label>
+<label>Size:
+	<select id="size">
+	<optgroup label="軽量画質">
+		<option value="512">512</option>
+	</optgroup>
+	<optgroup label="標準画質">
+		<option value="1024">1024</option>
+		<option value="2048">2048</option>
+	</optgroup>
+	<optgroup label="演算負荷に注意">
+		<option value="4096">4096</option>
+		<option value="8192">8192</option>
+	</optgroup>
+	</select>
+</label>
+<button id="draw">Draw</button>
+<button id="save">Save</button><br>
+<output id="time"></output><br>
+<output id="info"></output>
+</div>
+<hr>
+<div>
+<h2>マンデルブロ集合とは？</h2>
+<p>
+マンデルブロ集合は漸化式
+<var>z<sub>n+1</sub></var> = <var>z<sub>n</sub><sup>2</sup></var> + <var>c</var>,
+<var>z<sub>0</sub></var> = 0
+で定義される複素数列 {<var>z<sub>n</sub></var>}
+(<var>n</var> は 0 を含む自然数) が <var>n</var> → ∞
+で無限大に発散しない <var>c</var> の全体が作る集合です。
+上の図で黒く塗りつぶされている領域がマンデルブロ集合の各要素です。
+それ以外の領域は、発散する速度に応じて塗り分けられています。
+</p>
+</div>
+<hr>
+<footer>
+<div>
+<a href="https://github.com/KusaReMKN/mandelbrot">GitHub</a>
+</div>
+<div>
+Originally written in 2021 Apr. Renewed in 2022 Nov.
+Permanent ID of this document: <span class="tt">70126e0b6e0d0854</span>.
+</div>
+</footer>
+</body>
+</html>

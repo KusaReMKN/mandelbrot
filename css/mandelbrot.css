@@ -1,0 +1,19 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	width: 95%;
+	max-width: 800px;
+	margin: 1rem auto;
+	font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
+}
+button {
+	font: inherit;
+	line-height: 2em;
+}
+canvas, img {
+	max-width: 100%;
+}
+#canvas {
+	text-align: center;
+}
